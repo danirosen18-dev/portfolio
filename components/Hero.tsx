@@ -16,14 +16,6 @@ const item = {
 // Add more greetings here anytime — the component rotates whatever you give it.
 const greetings = ["Hello", "Hola", "שלום"];
 
-// The fun, rotating "currently" bit. Edit freely.
-const nowItems = [
-  "rooting for Arsenal ⚽",
-  "deep in a Catan game 🎲",
-  "cooking with too much garlic 🍳",
-  "chasing the next skydive 🪂",
-];
-
 const credentials = [
   "MLT Career Prep Fellow",
   "HSF Scholar",
@@ -39,18 +31,17 @@ export default function Hero() {
         animate="show"
         className="max-w-content mx-auto w-full"
       >
-        <motion.p variants={item} className="text-lg text-muted">
-          <Rotating items={greetings} className="font-medium text-ink" />{" "}
+        <motion.p
+          variants={item}
+          className="font-display text-3xl md:text-4xl font-medium text-ink"
+        >
+          <Rotating items={greetings} />{" "}
           <span aria-hidden="true">👋</span>
-        </motion.p>
-
-        <motion.p variants={item} className="mt-4 eyebrow">
-          Operations · Product · Strategy
         </motion.p>
 
         <motion.h1
           variants={item}
-          className="mt-4 font-display text-6xl md:text-8xl font-semibold tracking-tight text-ink leading-[0.95]"
+          className="mt-3 font-display text-6xl md:text-8xl font-semibold tracking-tight text-ink leading-[0.95]"
         >
           Daniel Rosen
         </motion.h1>
@@ -91,17 +82,17 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Now / currently strip */}
+        {/* Now strip — current status */}
         <motion.div variants={item} className="mt-8">
           <span className="inline-flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-full border border-line bg-surface px-4 py-2 text-sm text-muted">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-70" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
-            <span className="font-medium text-ink">Ops &amp; Product Intern @ VLX</span>
-            <span aria-hidden="true">·</span>
-            <span>currently</span>
-            <Rotating items={nowItems} className="font-medium text-ember" />
+            <span>Currently:</span>
+            <span className="font-medium text-ink">
+              Operations &amp; Product Intern @ VLX
+            </span>
           </span>
         </motion.div>
 

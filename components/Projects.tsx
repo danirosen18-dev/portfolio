@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -10,6 +11,7 @@ const projects = [
     desc: "Led a human factors research study analyzing how seat clearance and steering wheel reach distance affect lap performance in an F1 simulator, using a 3x3 mixed factorial ANOVA design across 6 participants.",
     tech: ["Minitab", "Excel", "Mixed Factorial ANOVA", "Human Factors"],
     icon: "🏎️",
+    image: null,
     expandable: true,
     details: [
       "Research question: how do seat clearance and steering wheel reach distance affect lap performance in a simulator?",
@@ -28,6 +30,7 @@ const projects = [
     desc: "Designed and built a physical countdown timer for classroom use to keep students on task during timed activities. Engineered a full hardware-software system from scratch using an Arduino Uno with potentiometer, servo motor, LED, buzzer, and push button.",
     tech: ["Arduino Uno", "C++", "Potentiometer", "Servo Motor", "LED/Buzzer"],
     icon: "⏱️",
+    image: null,
     expandable: false,
     details: [],
     paper: "/turnit-timer.pdf",
@@ -40,6 +43,7 @@ const projects = [
     desc: "Managed end-to-end logistics for Chabad UF's Birthright Israel program: 120+ applicants and 42 students placed, serving as coordinator and on-the-ground counselor during active regional conflict.",
     tech: ["Google Sheets", "Mayanot Portal", "Budget Management", "Group Logistics"],
     icon: "✈️",
+    image: "/birthright.jpg",
     expandable: false,
     details: [],
     paper: null,
@@ -64,6 +68,17 @@ export default function Projects() {
           {projects.map((p, idx) => (
             <Reveal key={p.title} delay={idx * 0.08}>
               <article className="flex h-full flex-col rounded-2xl border border-line bg-surface p-7 transition-shadow hover:shadow-[0_8px_30px_rgba(26,26,26,0.06)]">
+                {p.image && (
+                  <div className="relative -mx-7 -mt-7 mb-6 h-44 overflow-hidden rounded-t-2xl">
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover object-[center_60%]"
+                    />
+                  </div>
+                )}
                 <div className="flex items-center justify-between">
                   <span className="text-2xl" aria-hidden="true">{p.icon}</span>
                   <span className="rounded-full border border-line bg-paper px-3 py-1 text-xs font-medium text-muted">
