@@ -1,59 +1,66 @@
+import Image from "next/image";
+import Reveal from "./Reveal";
+import SectionHeading from "./SectionHeading";
+
+const facts = [
+  { value: "3.52", label: "GPA / 4.00" },
+  { value: "Eng · Esp · Heb", label: "Trilingual" },
+  { value: "Venezuelan", label: "Heritage" },
+];
+
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-gray-50 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">About Me</h2>
-          <div className="mt-3 h-1 w-16 bg-[#FA4616] mx-auto rounded-full" />
-        </div>
+    <section id="about" className="py-28 px-6">
+      <div className="max-w-content mx-auto">
+        <SectionHeading eyebrow="About" title="Hi, I'm Daniel." />
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Photo placeholder */}
-          <div className="flex justify-center">
-            <div className="relative">
-              <div className="w-64 h-64 md:w-72 md:h-72 rounded-full bg-[#003087] flex items-center justify-center text-white text-6xl font-bold shadow-2xl">
-                DR
-              </div>
-              {/* Orange ring accent */}
-              <div className="absolute -inset-2 rounded-full border-4 border-[#FA4616] opacity-20" />
+        <div className="mt-14 grid md:grid-cols-5 gap-12 items-start">
+          {/* Photo */}
+          <Reveal className="md:col-span-2">
+            <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-2xl">
+              <Image
+                src="/daniel.jpg"
+                alt="Daniel Rosen with UF Gators mascots"
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover object-center"
+              />
             </div>
-          </div>
+          </Reveal>
 
           {/* Bio */}
-          <div>
-            <h3 className="text-2xl font-bold text-[#003087] mb-5">
-              Hi, I&apos;m Daniel 👋
-            </h3>
-            <p className="text-gray-600 leading-relaxed mb-4">
+          <Reveal delay={0.1} className="md:col-span-3">
+            <p className="text-lg text-ink/80 leading-relaxed mb-5">
               I&apos;m an Industrial and Systems Engineering student at the University of
-              Florida&apos;s Herbert Wertheim College of Engineering — with a Minor in Business
-              Administration and a Certificate in Project Management. I&apos;m passionate about
-              the intersection of engineering, business, and leadership.
+              Florida&apos;s Herbert Wertheim College of Engineering, pursuing a Minor in Business
+              Administration and a Certificate in Engineering Project Management. I&apos;m
+              passionate about the intersection of operations, product, and strategy, where
+              systems thinking meets real-world execution. Whether I&apos;m optimizing a workflow
+              or building out a go-to-market plan, I bring an analytical mindset and a bias
+              toward action.
             </p>
-            <p className="text-gray-600 leading-relaxed mb-8">
-              A first-generation scholar, MLT Career Prep Fellow, and HSF recipient, I bring
-              a multicultural perspective and entrepreneurial mindset to everything I do. I
-              speak English, Spanish, and Hebrew — and I&apos;m always looking for the next
-              challenge, whether that&apos;s building something new or jumping out of a plane.
+            <p className="text-lg text-ink/80 leading-relaxed mb-8">
+              I&apos;m a Venezuelan-American with Jewish roots, raised in Miami at the
+              intersection of Latin and Jewish culture, which shapes how I think, communicate,
+              and connect with people. Trilingual in English, Spanish, and Hebrew, and an MLT
+              Career Prep Fellow and HSF recipient. Outside of work and school, you&apos;ll find me
+              watching Arsenal or the Heat, cooking something with too much garlic, or arguing over
+              Catan strategy. I&apos;m driven by curiosity, competition, and the belief that the
+              best problems are the ones nobody&apos;s bothered to solve yet.
             </p>
 
-            {/* Stat cards */}
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-white rounded-xl p-4 shadow-sm text-center border-t-4 border-[#FA4616]">
-                <p className="text-2xl font-bold text-[#003087]">3.58</p>
-                <p className="text-xs text-gray-500 mt-1 font-medium">GPA</p>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow-sm text-center border-t-4 border-[#003087]">
-                <p className="text-2xl font-bold text-[#FA4616]">2027</p>
-                <p className="text-xs text-gray-500 mt-1 font-medium">Graduating</p>
-              </div>
-              <div className="bg-white rounded-xl p-4 shadow-sm text-center border-t-4 border-[#FA4616]">
-                <p className="text-2xl font-bold text-[#003087]">3</p>
-                <p className="text-xs text-gray-500 mt-1 font-medium">Languages</p>
-              </div>
+              {facts.map((f) => (
+                <div
+                  key={f.label}
+                  className="rounded-xl border border-line bg-surface px-4 py-5 text-center"
+                >
+                  <p className="font-display text-lg font-semibold text-ink">{f.value}</p>
+                  <p className="mt-1 text-xs uppercase tracking-wide text-muted">{f.label}</p>
+                </div>
+              ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -1,47 +1,149 @@
-const placeholders = [
-  { id: 1, label: "Project 01" },
-  { id: 2, label: "Project 02" },
-  { id: 3, label: "Project 03" },
+"use client";
+import { useState } from "react";
+import Reveal from "./Reveal";
+import SectionHeading from "./SectionHeading";
+
+const projects = [
+  {
+    title: "F1 Simulator Ergonomics Study",
+    category: "Engineering Research",
+    desc: "Led a human factors research study analyzing how seat clearance and steering wheel reach distance affect lap performance in an F1 simulator, using a 3x3 mixed factorial ANOVA design across 6 participants.",
+    tech: ["Minitab", "Excel", "Mixed Factorial ANOVA", "Human Factors"],
+    icon: "🏎️",
+    expandable: true,
+    details: [
+      "Research question: how do seat clearance and steering wheel reach distance affect lap performance in a simulator?",
+      "Designed a 3x3 mixed factorial ANOVA with 6 participants across all treatment combinations.",
+      "Served as de facto project manager for a 6-person team; identified and corrected a critical statistical methodology error mid-study.",
+      "Coordinated directly with the course professor to validate the revised analytical approach.",
+      "Led the construction of the final presentation and full analysis write-up.",
+    ],
+    paper: "/f1-research-paper.pdf",
+    slides: "/powerpoint.pdf",
+    paperLabel: "Research Paper",
+  },
+  {
+    title: "TurnIt Timer",
+    category: "Hardware Build",
+    desc: "Designed and built a physical countdown timer for classroom use to keep students on task during timed activities. Engineered a full hardware-software system from scratch using an Arduino Uno with potentiometer, servo motor, LED, buzzer, and push button.",
+    tech: ["Arduino Uno", "C++", "Potentiometer", "Servo Motor", "LED/Buzzer"],
+    icon: "⏱️",
+    expandable: false,
+    details: [],
+    paper: "/turnit-timer.pdf",
+    slides: null,
+    paperLabel: "Project Overview",
+  },
+  {
+    title: "Birthright Israel — Ops & Logistics",
+    category: "Operations & Leadership",
+    desc: "Managed end-to-end logistics for Chabad UF's Birthright Israel program: 120+ applicants and 42 students placed, serving as coordinator and on-the-ground counselor during active regional conflict.",
+    tech: ["Google Sheets", "Mayanot Portal", "Budget Management", "Group Logistics"],
+    icon: "✈️",
+    expandable: false,
+    details: [],
+    paper: null,
+    slides: null,
+    paperLabel: "Research Paper",
+  },
 ];
 
 export default function Projects() {
-  return (
-    <section id="projects" className="py-24 bg-gray-50 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Projects</h2>
-          <div className="mt-3 h-1 w-16 bg-[#FA4616] mx-auto rounded-full" />
-          <p className="mt-4 text-gray-400 text-sm">
-            Portfolio projects coming soon — stay tuned.
-          </p>
-        </div>
+  const [expanded, setExpanded] = useState<string | null>(null);
 
-        <div className="grid md:grid-cols-3 gap-6 mt-12">
-          {placeholders.map((p) => (
-            <div
-              key={p.id}
-              className="group bg-white rounded-xl p-10 shadow-sm border-2 border-dashed border-gray-200 hover:border-[#FA4616] flex flex-col items-center justify-center text-center transition-all hover:shadow-md min-h-[220px]"
-            >
-              <div className="w-14 h-14 rounded-full bg-gray-100 group-hover:bg-[#FA4616] flex items-center justify-center mb-5 transition-all">
-                <svg
-                  className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 4v16m8-8H4"
-                  />
-                </svg>
-              </div>
-              <p className="text-xs text-gray-300 font-mono mb-1">{p.label}</p>
-              <h3 className="font-bold text-gray-300 group-hover:text-[#003087] transition-colors text-lg">
-                Coming Soon
-              </h3>
-            </div>
+  return (
+    <section id="projects" className="py-28 px-6">
+      <div className="max-w-content mx-auto">
+        <SectionHeading
+          eyebrow="Selected Work"
+          title="Projects."
+          subtitle="Engineering research, hardware builds, and real-world operations work."
+        />
+
+        <div className="mt-16 grid md:grid-cols-3 gap-6">
+          {projects.map((p, idx) => (
+            <Reveal key={p.title} delay={idx * 0.08}>
+              <article className="flex h-full flex-col rounded-2xl border border-line bg-surface p-7 transition-shadow hover:shadow-[0_8px_30px_rgba(26,26,26,0.06)]">
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl" aria-hidden="true">{p.icon}</span>
+                  <span className="rounded-full border border-line bg-paper px-3 py-1 text-xs font-medium text-muted">
+                    {p.category}
+                  </span>
+                </div>
+
+                <h3 className="mt-5 font-display text-lg font-semibold text-ink">
+                  {p.title}
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/70">{p.desc}</p>
+
+                {p.expandable && expanded === p.title && (
+                  <div className="mt-5 border-t border-line pt-4">
+                    <p className="eyebrow mb-3">Study Details</p>
+                    <ul className="space-y-2">
+                      {p.details.map((d, i) => (
+                        <li key={i} className="flex gap-2.5 text-sm text-ink/70">
+                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-ember" />
+                          {d}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {p.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full bg-paper px-2.5 py-1 text-xs font-medium text-muted border border-line"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-5 flex flex-col gap-3">
+                  {p.expandable && (
+                    <button
+                      onClick={() => setExpanded(expanded === p.title ? null : p.title)}
+                      className="flex w-fit items-center gap-1.5 text-sm font-semibold text-ink transition-colors hover:text-ember"
+                    >
+                      {expanded === p.title ? "Hide details" : "View details"}
+                      <span
+                        className={`inline-block transition-transform ${
+                          expanded === p.title ? "rotate-180" : ""
+                        }`}
+                      >
+                        ↓
+                      </span>
+                    </button>
+                  )}
+                  {(p.paper || p.slides) && (
+                    <div className="flex gap-2">
+                      {p.paper && (
+                        <a
+                          href={p.paper}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 rounded-lg bg-ink px-3 py-2 text-center text-xs font-semibold text-paper transition-colors hover:bg-ember"
+                        >
+                          {p.paperLabel}
+                        </a>
+                      )}
+                      {p.slides && (
+                        <a
+                          href={p.slides}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 rounded-lg border border-ink/20 px-3 py-2 text-center text-xs font-semibold text-ink transition-colors hover:border-ink"
+                        >
+                          View Slides
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>
