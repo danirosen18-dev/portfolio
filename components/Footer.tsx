@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import { links } from "@/lib/links";
 
 export default function Footer() {
   return (
@@ -16,31 +17,39 @@ export default function Footer() {
 
           <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-3">
             <a
-              href="mailto:danirosen18@gmail.com"
+              href={`mailto:${links.email}`}
               className="rounded-full bg-ember px-7 py-3.5 text-sm font-semibold text-paper transition-all hover:bg-ember-soft hover:-translate-y-0.5"
             >
-              danirosen18@gmail.com
+              {links.email}
             </a>
             <a
-              href="tel:+17867071255"
+              href={`tel:${links.phone}`}
               className="rounded-full border border-paper/20 px-7 py-3.5 text-sm font-semibold text-paper transition-all hover:border-paper hover:-translate-y-0.5"
             >
-              (786) 707-1255
+              {links.phoneDisplay}
             </a>
             <a
-              href="https://www.linkedin.com/in/daniel-rosen-"
+              href={links.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-paper/20 px-7 py-3.5 text-sm font-semibold text-paper transition-all hover:border-paper hover:-translate-y-0.5"
             >
               LinkedIn
             </a>
+            <a
+              href={links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-paper/20 px-7 py-3.5 text-sm font-semibold text-paper transition-all hover:border-paper hover:-translate-y-0.5"
+            >
+              GitHub
+            </a>
           </div>
         </Reveal>
 
         <div className="mt-20 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-paper/10 pt-8 text-sm text-paper/50">
           <p>© {new Date().getFullYear()} Daniel Rosen</p>
-          <p>Industrial &amp; Systems Engineering · University of Florida</p>
+          <p>Designed &amp; built by me with Next.js, TypeScript &amp; Tailwind</p>
         </div>
       </div>
     </footer>

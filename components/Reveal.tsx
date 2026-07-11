@@ -6,7 +6,8 @@ import type { ReactNode } from "react";
 /**
  * Wraps children and fades/slides them into view as they enter the viewport.
  * Used across sections for a subtle, consistent scroll-reveal effect.
- * Respects prefers-reduced-motion automatically via motion's reduced-motion support.
+ * Honors the OS "Reduce Motion" setting via the app-wide <MotionProvider>
+ * (MotionConfig reducedMotion="user") in app/layout.tsx.
  */
 export default function Reveal({
   children,

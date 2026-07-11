@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { links } from "@/lib/links";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -7,6 +8,8 @@ const navLinks = [
   { href: "#education", label: "Education" },
   { href: "#leadership", label: "Leadership" },
   { href: "#projects", label: "Projects" },
+  { href: "#skills", label: "Skills" },
+  { href: "#interests", label: "Interests" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -63,7 +66,7 @@ export default function Nav() {
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-7" role="list">
+        <ul className="hidden lg:flex items-center gap-6" role="list">
           {navLinks.map((l) => {
             const isActive = activeSection === l.href.slice(1);
             return (
@@ -85,7 +88,7 @@ export default function Nav() {
           })}
           <li>
             <a
-              href="/resume.pdf"
+              href={links.resume}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-ember"
@@ -97,7 +100,7 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-ink p-1"
+          className="lg:hidden text-ink p-2.5 -mr-2.5"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
@@ -114,7 +117,7 @@ export default function Nav() {
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div className="md:hidden bg-paper border-t border-line px-6 py-3">
+        <div className="lg:hidden bg-paper border-t border-line px-6 py-3">
           {navLinks.map((l) => {
             const isActive = activeSection === l.href.slice(1);
             return (
@@ -132,7 +135,7 @@ export default function Nav() {
             );
           })}
           <a
-            href="/resume.pdf"
+            href={links.resume}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-3 mb-1 block rounded-full bg-ink px-4 py-2.5 text-center font-semibold text-paper"

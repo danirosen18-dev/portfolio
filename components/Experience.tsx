@@ -4,16 +4,16 @@ import SectionHeading from "./SectionHeading";
 
 const jobs = [
   {
-    company: "VLX",
-    role: "Operations & Product Development Intern",
+    company: "Visualogyx (VLX)",
+    role: "Product & Operations Intern",
     period: "May 2026 – Present",
-    location: "Miami, FL",
+    location: "Aventura, FL",
     current: true,
     logo: "/vlx-logo.png",
     bullets: [
-      "Build and automate lead generation funnels and internal workflows using Zoho Flow, improving team efficiency across sales and operations pipelines.",
-      "Contribute to product development cycles through daily standups with the engineering team, identifying bugs, testing features, and surfacing user-facing improvements.",
-      "Leverage AI tooling to accelerate automation of repetitive internal processes and documentation workflows.",
+      "Revamped the CRM's lead management module and debugged core platform functionality, building automated workflows that streamlined the sales funnel and reduced manual data entry across the team.",
+      "Built custom, reusable Claude skills adopted by the team — including a prompt builder for an internal AI template feature and an automated one-pager generator — and used MCP connectors to automate recurring CRM tasks.",
+      "Produced email marketing campaigns and sales collateral, and demoed product features to clients and prospective leads in both English and Spanish, translating technical capabilities into clear business value.",
     ],
   },
   {
@@ -75,9 +75,9 @@ export default function Experience() {
                   <p className="text-sm text-muted">{job.location}</p>
 
                   <ul className="mt-5 space-y-2.5">
-                    {job.bullets.map((b, i) => (
+                    {job.bullets.map((b) => (
                       <li
-                        key={i}
+                        key={b}
                         className="flex gap-3 text-[15px] leading-relaxed text-ink/75"
                       >
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" />
