@@ -6,20 +6,20 @@ const jobs = [
   {
     company: "Visualogyx (VLX)",
     role: "Product & Operations Intern",
-    period: "May 2026 – Present",
+    period: "May 2026 - Present",
     location: "Aventura, FL",
     current: true,
     logo: "/vlx-logo.png",
     bullets: [
       "Revamped the CRM's lead management module and debugged core platform functionality, building automated workflows that streamlined the sales funnel and reduced manual data entry across the team.",
-      "Built custom, reusable Claude skills adopted by the team — including a prompt builder for an internal AI template feature and an automated one-pager generator — and used MCP connectors to automate recurring CRM tasks.",
+      "Built custom, reusable Claude skills adopted by the team, including a prompt builder for an internal AI template feature and an automated one-pager generator, and used MCP connectors to automate recurring CRM tasks.",
       "Produced email marketing campaigns and sales collateral, and demoed product features to clients and prospective leads in both English and Spanish, translating technical capabilities into clear business value.",
     ],
   },
   {
     company: "Building Engineering Consultants, Inc. (BECI)",
     role: "Project Manager / Engineer Intern",
-    period: "June 2025 – August 2025",
+    period: "June 2025 - August 2025",
     location: "Miami, FL",
     current: false,
     logo: "/beci-logo.png",

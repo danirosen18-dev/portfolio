@@ -15,7 +15,7 @@ const coursework = [
   "Engineering Economy",
   "Matrix & Numerical Methods",
   "Computational Linear Algebra",
-  "Engineering Mechanics – Statics",
+  "Engineering Mechanics - Statics",
   "Computer-Aided Graphics & Design (CAD)",
   "Financial Accounting",
 ];

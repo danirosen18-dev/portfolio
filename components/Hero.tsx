@@ -13,14 +13,14 @@ const item = {
   hidden: { opacity: 0, y: 22 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
 };
-// The <h1> is the Largest Contentful Paint element — keep it opaque from the
+// The <h1> is the Largest Contentful Paint element, so keep it opaque from the
 // start (slide only) so the animation doesn't delay the LCP score.
 const headline = {
   hidden: { opacity: 1, y: 22 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
 };
 
-// Add more greetings here anytime — the component rotates whatever you give it.
+// Add more greetings here anytime; the component rotates whatever you give it.
 const greetings = ["Hello", "Hola", "שלום"];
 
 const credentials = [
@@ -87,17 +87,9 @@ export default function Hero() {
           >
             LinkedIn
           </a>
-          <a
-            href={links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-ink/20 px-7 py-3.5 text-sm font-semibold text-ink transition-all hover:border-ink hover:-translate-y-0.5"
-          >
-            GitHub
-          </a>
         </motion.div>
 
-        {/* Now strip — current status */}
+        {/* Now strip: current status */}
         <motion.div variants={item} className="mt-8">
           <span className="inline-flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-full border border-line bg-surface px-4 py-2 text-sm text-muted">
             <span className="relative flex h-2 w-2">

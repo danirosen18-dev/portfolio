@@ -1,32 +1,32 @@
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
-// Uniform tiles — even 3x3 grid, all the same size.
+// Uniform tiles, even 3x3 grid, all the same size.
 const tiles = [
   {
     emoji: "⚽ 🐊 🏀",
     title: "Sports",
-    desc: "Arsenal, the Gators, and all of Miami — Heat, Dolphins, Panthers & Marlins. Gunner for life, competitive at every watch party.",
+    desc: "Arsenal, the Gators, and all of Miami: Heat, Dolphins, Panthers & Marlins. Gunner for life, competitive at every watch party.",
   },
   {
     emoji: "👨‍👩‍👧‍👦",
     title: "Family",
-    desc: "Family is the whole point — my foundation, and the reason behind everything I do.",
+    desc: "Family is the whole point, my foundation, and the reason behind everything I do.",
   },
   {
     emoji: "🪂",
     title: "Skydiving",
-    desc: "Jumped from 14,000 ft over Interlaken — once you've freefallen, everything else feels manageable.",
+    desc: "Jumped from 14,000 ft over Interlaken. Once you've freefallen, everything else feels manageable.",
   },
   {
     emoji: "🌐",
     title: "Trilingual",
-    desc: "English · Spanish · Hebrew — raised between Latin and Jewish culture.",
+    desc: "English · Spanish · Hebrew. Raised between Latin and Jewish culture.",
   },
   {
     emoji: "🍳",
     title: "Cooking",
-    desc: "A Latin–Jewish Miami kitchen. Always too much garlic.",
+    desc: "A Latin-Jewish Miami kitchen. Always too much garlic.",
   },
   {
     emoji: "🎲",
@@ -36,7 +36,7 @@ const tiles = [
   {
     emoji: "🧩",
     title: "Problem Solver",
-    desc: "Not really an entrepreneur — more a problem solver. I find what's broken and build the fix.",
+    desc: "Not really an entrepreneur, more a problem solver. I find what's broken and build the fix.",
   },
   {
     emoji: "🏓",

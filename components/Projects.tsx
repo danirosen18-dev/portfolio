@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
-import { links } from "@/lib/links";
 
 type Project = {
   title: string;
@@ -15,18 +14,9 @@ type Project = {
   paper?: string;
   paperLabel?: string;
   slides?: string;
-  github?: string;
 };
 
 const projects: Project[] = [
-  {
-    title: "Personal Finance Tracker",
-    category: "Full-Stack Web App",
-    desc: "A full-stack personal finance dashboard I designed and built to track spending, cards, and budgets — with interactive charts and an AI assistant (powered by Claude) that answers questions about your finances in plain English.",
-    tech: ["Next.js", "TypeScript", "Prisma", "SQLite", "Recharts", "Claude AI"],
-    icon: "💸",
-    github: links.githubFinance,
-  },
   {
     title: "F1 Simulator Ergonomics Study",
     category: "Engineering Research",
@@ -55,7 +45,7 @@ const projects: Project[] = [
     paperLabel: "Project Overview",
   },
   {
-    title: "Birthright Israel — Ops & Logistics",
+    title: "Birthright Israel: Ops & Logistics",
     category: "Operations & Leadership",
     desc: "Managed end-to-end logistics for Chabad UF's Birthright Israel program: 120+ applicants and 42 students placed, serving as coordinator and on-the-ground counselor during active regional conflict.",
     tech: ["Google Sheets", "Mayanot Portal", "Budget Management", "Group Logistics"],
@@ -72,7 +62,7 @@ export default function Projects() {
         <SectionHeading
           eyebrow="Selected Work"
           title="Projects."
-          subtitle="Software builds, engineering research, hardware, and real-world operations work."
+          subtitle="Engineering research, hardware builds, and real-world operations work."
         />
 
         <div className="mt-16 grid md:grid-cols-3 gap-6">
@@ -133,18 +123,8 @@ export default function Projects() {
                       </span>
                     </button>
                   )}
-                  {(p.paper || p.slides || p.github) && (
+                  {(p.paper || p.slides) && (
                     <div className="flex gap-2">
-                      {p.github && (
-                        <a
-                          href={p.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 rounded-lg bg-ink px-3 py-2 text-center text-xs font-semibold text-paper transition-colors hover:bg-ember"
-                        >
-                          View Code ↗
-                        </a>
-                      )}
                       {p.paper && (
                         <a
                           href={p.paper}

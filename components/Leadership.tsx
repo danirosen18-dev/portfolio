@@ -17,7 +17,7 @@ const leadership = [
   {
     org: "Management Leadership for Tomorrow (MLT)",
     role: "Career Prep Fellow",
-    period: "February 2025 – Present",
+    period: "February 2025 - Present",
     highlight: "Selected from 3,000+ applicants",
     desc: "Elite 18+-month leadership development program. Collaborate with Fortune 500 executives through exclusive seminars, business case studies, and professional development workshops focused on career acceleration.",
     logo: "/mlt-logo.png",
@@ -25,7 +25,7 @@ const leadership = [
   {
     org: "TAMID Group",
     role: "Investment Analyst",
-    period: "September 2024 – Present",
+    period: "September 2024 - Present",
     highlight: null,
     desc: "Pro-bono consulting for Israeli startups. Led U.S. market-entry analysis for Scoutrix, an AI-powered basketball player development platform, identifying partnership targets and a go-to-market strategy. Also built a marketing strategy for ClariFruit via SWOT, competitive research, and consumer segmentation, and researched AI trends in agriculture.",
     logo: "/tamid-logo.png",
@@ -33,7 +33,7 @@ const leadership = [
   {
     org: "Society of Hispanic Professional Engineers (SHPE)",
     role: "Industrial Engineer Member",
-    period: "January 2023 – Present",
+    period: "January 2023 - Present",
     highlight: null,
     desc: "Organize tutoring workshops and mentorship meetings to empower Latino engineers in STEM, fostering an inclusive environment for academic and career growth across the UF chapter.",
     logo: "/shpe-logo.webp",

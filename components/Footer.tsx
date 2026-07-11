@@ -11,7 +11,7 @@ export default function Footer() {
             Let&apos;s build something.
           </h2>
           <p className="mt-5 max-w-md text-paper/60 leading-relaxed">
-            Whether it&apos;s an opportunity, a collaboration, or just a conversation —
+            Whether it&apos;s an opportunity, a collaboration, or just a conversation,
             my inbox is always open.
           </p>
 
@@ -36,20 +36,12 @@ export default function Footer() {
             >
               LinkedIn
             </a>
-            <a
-              href={links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-paper/20 px-7 py-3.5 text-sm font-semibold text-paper transition-all hover:border-paper hover:-translate-y-0.5"
-            >
-              GitHub
-            </a>
           </div>
         </Reveal>
 
         <div className="mt-20 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-paper/10 pt-8 text-sm text-paper/50">
           <p>© {new Date().getFullYear()} Daniel Rosen</p>
-          <p>Designed &amp; built by me with Next.js, TypeScript &amp; Tailwind</p>
+          <p>Industrial &amp; Systems Engineering · University of Florida</p>
         </div>
       </div>
     </footer>

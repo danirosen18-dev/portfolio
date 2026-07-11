@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 
 /**
  * Cycles through a list of strings with a small fade/slide.
- * Reusable — pass any array of items to rotate (greetings, statuses, etc.).
+ * Reusable. Pass any array of items to rotate (greetings, statuses, etc.).
  */
 export default function Rotating({
   items,

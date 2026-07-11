@@ -48,7 +48,7 @@ export default function RootLayout({
     url: SITE_URL,
     jobTitle: "Industrial & Systems Engineering Student",
     alumniOf: "University of Florida",
-    sameAs: [links.linkedin, links.github],
+    sameAs: [links.linkedin],
   };
 
   return (
